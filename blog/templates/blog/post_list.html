@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %} {% block contents %}
+<a href="#"
+  ><button type="button" class="btn btn-outline-success">
+    New Post
+  </button></a
+>
+
+{% for post in posts %}
+<h2>{{post.title}}</h2>
+<em>{{post.author}}</em>
+<p>{{post.created_data}}</p>
+<small>{{post.text}}</small>
+<hr />
+{% endfor %} {% endblock contents %}
