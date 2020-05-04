@@ -1,9 +1,9 @@
 {% extends 'blog/base.html' %} {% block contents %}
-<a href="#"
-  ><button type="button" class="btn btn-outline-success">
+<a href="{% url 'post_new' %}">
+  <button type="button" class="btn btn-outline-success">
     New Post
-  </button></a
->
+  </button>
+</a>
 
 {% for post in posts %}
 <h2>{{post.title}}</h2>

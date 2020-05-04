@@ -1,1 +1,13 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %} {% block contents %}
+
+<h2>New Post</h2>
+<form method="POST" class="post-form">
+  <!-- フォームを作る際は下記のコードをかく決まりがあり、セキュリティみたいなもの -->
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Post</button>
+  <a href="{% url 'post_list' %}">
+    <button type="button" class="btn btn-danger">Back</button>
+  </a>
+</form>
+
+{% endblock contents %}
